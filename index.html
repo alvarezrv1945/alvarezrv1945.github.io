@@ -1,231 +1,241 @@
 <!DOCTYPE html>
-<html lang="en">  
-<head>  
-  <meta charset="UTF-8">  
-  <meta name="viewport" content="width=device-width, initial-scale=1">  
-  <title>Alvarez Official</title>  
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">  
-  <style>  
-    /* BASIC RESET */  
-    * {  
-      margin: 0;  
-      padding: 0;  
-      box-sizing: border-box;  
-    }  
-    html, body {  
-      font-family: 'Poppins', sans-serif;  
-      scroll-behavior: smooth;  
-      transition: background 0.5s, color 0.5s;  
-    }  
-    body {  
-      background: linear-gradient(135deg, #ffffff, #f9f9f9);  
-      color: #333;  
-      line-height: 1.6;  
-    }/* PRELOADER */  
-    #preloader {  
-      background: #ffffff;  
-      position: fixed;  
-      top: 0; left: 0;  
-      width: 100%;  
-      height: 100%;  
-      z-index: 9999;  
-      display: flex;  
-      justify-content: center;  
-      align-items: center;  
-    }  
-    #preloader span {  
-      width: 50px;  
-      height: 50px;  
-      border: 5px solid #4CAF50;  
-      border-top: 5px solid transparent;  
-      border-radius: 50%;  
-      animation: spin 1s linear infinite;  
-    }  
-    @keyframes spin {  
-      to { transform: rotate(360deg); }  
-    }  
-    
-    /* HEADER */  
-    header {  
-      background: #fff;  
-      padding: 20px 40px;  
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);  
-      display: flex;  
-      justify-content: space-between;  
-      align-items: center;  
-      position: sticky;  
-      top: 0;  
-      z-index: 100;  
-    }  
-    header h1 {  
-      font-size: 26px;  
-      color: #4CAF50;  
-      animation: fadeInDown 1s;  
-    }  
-    nav a {  
-      margin-left: 25px;  
-      text-decoration: none;  
-      color: #555;  
-      font-weight: 600;  
-      font-size: 16px;  
-      transition: 0.3s;  
-      opacity: 0;  
-      animation: fadeIn 1s forwards;  
-      animation-delay: 0.5s;  
-    }  
-    nav a:hover {  
-      color: #4CAF50;  
-    }  
-    
-    /* HERO */  
-    .hero {  
-      height: 90vh;  
-      display: flex;  
-      flex-direction: column;  
-      justify-content: center;  
-      align-items: center;  
-      text-align: center;  
-      padding: 20px;  
-      animation: fadeInUp 1.5s;  
-    }  
-    .hero h2 {  
-      font-size: 48px;  
-      margin-bottom: 20px;  
-    }  
-    .hero p {  
-      font-size: 20px;  
-      max-width: 600px;  
-      margin-bottom: 30px;  
-    }  
-    .hero a {  
-      display: inline-block;  
-      padding: 12px 30px;  
-      background: #4CAF50;  
-      color: #fff;  
-      border-radius: 30px;  
-      text-decoration: none;  
-      font-weight: 600;  
-      transition: 0.3s;  
-    }  
-    .hero a:hover {  
-      background: #45a049;  
-    }  
-    
-    /* SECTIONS */  
-    section {  
-      padding: 60px 20px;  
-      max-width: 1100px;  
-      margin: auto;  
-      opacity: 0;  
-      transform: translateY(50px);  
-      transition: all 1s ease;  
-    }  
-    section.show {  
-      opacity: 1;  
-      transform: translateY(0);  
-    }  
-    .about-profile {  
-      display: flex;  
-      align-items: center;  
-      flex-direction: column;  
-      text-align: center;  
-    }  
-    .about-profile img {  
-      width: 150px;  
-      height: 150px;  
-      border-radius: 50%;  
-      margin-bottom: 20px;  
-      border: 3px solid #4CAF50;  
-      object-fit: cover;  
-    }  
-    .services-cards {  
-      display: grid;  
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  
-      gap: 20px;  
-      margin-top: 40px;  
-    }  
-    .card {  
-      background: #fff;  
-      padding: 30px 20px;  
-      text-align: center;  
-      border-radius: 10px;  
-      box-shadow: 0 2px 15px rgba(0,0,0,0.1);  
-      transition: 0.3s;  
-    }  
-    .card:hover {  
-      transform: translateY(-5px);  
-    }  
-    
-    /* FOOTER */  
-    footer {  
-      background: #fff;  
-      text-align: center;  
-      padding: 20px 0;  
-      font-size: 14px;  
-      margin-top: 40px;  
-    }  
-    
-    /* DARK MODE */  
-    body.dark {  
-      background: #111;  
-      color: #eee;  
-    }  
-    body.dark header, body.dark footer {  
-      background: #222;  
-      color: #eee;  
-    }  
-    body.dark nav a:hover {  
-      color: #00ff95;  
-    }  
-    .toggle-darkmode {  
-      cursor: pointer;  
-      background: none;  
-      border: none;  
-      font-size: 22px;  
-      margin-left: 20px;  
-      transition: 0.3s;  
-    }  
-    
-    /* MUSIC BUTTON */  
-    .music-control {  
-      position: fixed;  
-      bottom: 20px;  
-      right: 20px;  
-      background: #4CAF50;  
-      color: white;  
-      border: none;  
-      border-radius: 50%;  
-      width: 60px;  
-      height: 60px;  
-      font-size: 28px;  
-      display: flex;  
-      justify-content: center;  
-      align-items: center;  
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);  
-      cursor: pointer;  
-      z-index: 2000;  
-      transition: 0.3s;  
-    }  
-    .music-control:hover {  
-      background: #45a049;  
-    }  
-    
-    /* Animations */  
-    @keyframes fadeInDown {  
-      from { opacity: 0; transform: translateY(-30px); }  
-      to { opacity: 1; transform: translateY(0); }  
-    }  
-    @keyframes fadeInUp {  
-      from { opacity: 0; transform: translateY(30px); }  
-      to { opacity: 1; transform: translateY(0); }  
-    }  
-    @keyframes fadeIn {  
-      from { opacity: 0; }  
-      to { opacity: 1; }  
-    }  
-    
-  </style>  
-</head>  
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alvarez Official</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* BASIC RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+      transition: background 0.5s, color 0.5s;
+    }
+    body {
+      background: linear-gradient(135deg, #ffffff, #f9f9f9);
+      color: #333;
+      line-height: 1.6;
+    }
+    /* PRELOADER */
+    #preloader {
+      background: #ffffff;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #preloader span {
+      width: 50px;
+      height: 50px;
+      border: 5px solid #4CAF50;
+      border-top: 5px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    /* HEADER */
+    header {
+      background: #fff;
+      padding: 20px 40px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header h1 {
+      font-size: 26px;
+      color: #4CAF50;
+      animation: fadeInDown 1s;
+    }
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: #555;
+      font-weight: 600;
+      font-size: 16px;
+      transition: 0.3s;
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+      animation-delay: 0.5s;
+    }
+    nav a:hover {
+      color: #4CAF50;
+    }
+    /* HERO */
+    .hero {
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      animation: fadeInUp 1.5s;
+    }
+    .hero h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 20px;
+      max-width: 600px;
+      margin-bottom: 30px;
+    }
+    .hero a {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #4CAF50;
+      color: #fff;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .hero a:hover {
+      background: #45a049;
+    }
+    /* SECTIONS */
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease;
+    }
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .about-profile {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+    .about-profile img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 3px solid #4CAF50;
+      object-fit: cover;
+    }
+    .services-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .card {
+      background: #fff;
+      padding: 30px 20px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    /* FOOTER */
+    footer {
+      background: #fff;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+    /* DARK MODE */
+    body.dark {
+      background: #111;
+      color: #eee;
+    }
+    body.dark header, body.dark footer {
+      background: #222;
+      color: #eee;
+    }
+    body.dark nav a:hover {
+      color: #00ff95;
+    }
+    .toggle-darkmode {
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-size: 22px;
+      margin-left: 20px;
+      transition: 0.3s;
+    }
+    /* MUSIC BUTTON */
+    .music-control {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 28px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      cursor: pointer;
+      z-index: 2000;
+      transition: 0.3s;
+    }
+    .music-control:hover {
+      background: #45a049;
+    }
+    /* BACK TO TOP BUTTON */
+    #backToTop {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      z-index: 2000;
+    }
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
 <body>
 <!-- PRELOADER -->
 <div id="preloader">
@@ -302,6 +312,9 @@
 <!-- MUSIC CONTROL BUTTON -->
 <button class="music-control" onclick="toggleMusic()">▶️</button>
 
+<!-- BACK TO TOP BUTTON -->
+<button id="backToTop" onclick="scrollToTop()">⬆️</button>
+
 <!-- SCRIPT -->
 <script>
   // Preloader
@@ -342,6 +355,20 @@
       musicBtn.textContent = '⏸️';
     }
     isPlaying = !isPlaying;
+  }
+
+  // Back to Top Button
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTop.style.display = 'block';
+    } else {
+      backToTop.style.display = 'none';
+    }
+  });
+
+  function scrollToTop() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
   }
 </script>
 </body>
