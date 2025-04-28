@@ -1,4 +1,4 @@
-<h1 align="center">🚀 Welcome to DarkZone by @Alvarezrv 🚀</h1>
+<h1 align="center">🚀 GABUT ZONE by @Alvarezrv 🚀</h1>
 
 <p align="center">
   <img src="https://media.giphy.com/media/h408T6Y5GfmXBKW62l/giphy.gif" width="200" style="border-radius: 50%;">
@@ -9,6 +9,12 @@
   🔥 Developer | 🎧 Music Addict | 🛡️ Cyber Explorer
 </p>
 
+<p align="center">
+  <img src="https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif" width="100">
+  <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" width="100">
+  <img src="https://media.giphy.com/media/j5hP1f0ED0t7W/giphy.gif" width="100">
+</p>
+
 ---
 
 ## 🧠 About Me
@@ -16,6 +22,10 @@
 - 🛠️ Building awesome things in the dark
 - 📡 Cybersecurity Enthusiast
 - ✈️ Telegram: [@Alvarezrv](https://t.me/Alvarezrv)
+
+<p align="center">
+  <img src="https://media.giphy.com/media/xT0GqeSlGSRQut4JPO/giphy.gif" width="120">
+</p>
 
 ---
 
@@ -38,6 +48,10 @@
 ## 🌐 My Official Website
 
 > [**Visit My Dark Web**](https://alvarezrv1945.github.io)
+
+<p align="center">
+  <img src="https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif" width="120">
+</p>
 
 ---
 
