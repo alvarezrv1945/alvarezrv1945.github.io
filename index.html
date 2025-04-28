@@ -3,137 +3,174 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Music Profile</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <title>Alvarez Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
     * {
-      box-sizing: border-box;
-      padding: 0;
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #89f7fe, #66a6ff);
-      height: 100vh;
+    body, html {
+      height: 100%;
+      overflow: hidden;
+      background: black;
+      font-family: 'Share Tech Mono', monospace;
+      color: #00ff00;
+      text-align: center;
+      position: relative;
+    }
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+    .content {
+      position: relative;
+      z-index: 1;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
-      text-align: center;
-      animation: fadeIn 1.2s ease;
+      height: 100vh;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .profile-img {
+    img {
       width: 180px;
       height: 180px;
       border-radius: 50%;
-      border: 6px solid white;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      border: 3px solid #00ff00;
+      box-shadow: 0 0 15px #00ff00;
+      margin-bottom: 20px;
+      animation: pulse 2s infinite;
       object-fit: cover;
-      transition: transform 0.4s ease;
     }
-    .profile-img:hover {
-      transform: scale(1.08);
+    @keyframes pulse {
+      0% { box-shadow: 0 0 15px #00ff00; }
+      50% { box-shadow: 0 0 30px #00ff00; }
+      100% { box-shadow: 0 0 15px #00ff00; }
     }
     h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      text-shadow: 0 0 8px #00ff00;
+    }
+    .typewriter {
+      font-size: 16px;
       margin-top: 20px;
-      font-size: 30px;
-      color: #fff;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+      height: 60px;
     }
     .buttons {
       margin-top: 20px;
     }
-    .btn {
-      background: #fff;
-      color: #66a6ff;
-      border: none;
-      padding: 12px 25px;
-      margin: 8px;
-      border-radius: 30px;
+    button {
+      background: transparent;
+      border: 2px solid #00ff00;
+      color: #00ff00;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 5px;
       font-size: 16px;
-      font-weight: bold;
       cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: 0.3s;
     }
-    .btn:hover {
-      background: #66a6ff;
-      color: #fff;
-      transform: translateY(-3px);
-    }
-    #progressContainer {
-      width: 80%;
-      background: rgba(255,255,255,0.5);
-      height: 8px;
-      border-radius: 10px;
-      margin-top: 25px;
-      overflow: hidden;
-    }
-    #progressBar {
-      height: 8px;
-      background: #4CAF50;
-      width: 0%;
-      transition: width 0.3s;
-    }
-    .social-link {
-      margin-top: 30px;
-      font-size: 18px;
-    }
-    .social-link a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-    .social-link a:hover {
-      color: #000;
+    button:hover {
+      background: #00ff00;
+      color: black;
     }
     audio {
       display: none;
+    }
+    a {
+      color: #00ff00;
+      text-decoration: underline;
+      margin-top: 15px;
+      display: inline-block;
     }
   </style>
 </head>
 <body>
 
-  <img class="profile-img" src="profile.jpg" alt="Profile Picture">
-  <h1>Hai, Jangan Lupa Mandi Bro!</h1>
+<canvas id="matrix"></canvas>
+
+<div class="content">
+  <img src="profile.jpg" alt="Profile Picture">
+  <h1>Agent Alvarez Online</h1>
 
   <div class="buttons">
-    <button class="btn" onclick="playAudio()">Play</button>
-    <button class="btn" onclick="pauseAudio()">Pause</button>
-  </div>
-
-  <div id="progressContainer">
-    <div id="progressBar"></div>
-  </div>
-
-  <div class="social-link">
-    <p>Contact me on <a href="https://t.me/Alvarezrv" target="_blank">@Alvarezrv</a></p>
+    <button onclick="playAudio()">[ Play Music ]</button>
+    <button onclick="pauseAudio()">[ Pause Music ]</button>
   </div>
 
   <audio id="music" src="https://alvarezrv1945.github.io/musik.mp3"></audio>
 
-  <script>
-    const music = document.getElementById('music');
-    const progressBar = document.getElementById('progressBar');
+  <div class="typewriter" id="typewriter"></div>
 
-    function playAudio() {
-      music.play();
+  <a href="https://t.me/Alvarezrv" target="_blank">Contact: @Alvarezrv</a>
+</div>
+
+<script>
+  // Matrix Effect
+  var c = document.getElementById("matrix");
+  var ctx = c.getContext("2d");
+
+  c.height = window.innerHeight;
+  c.width = window.innerWidth;
+
+  var letters = "01";
+  letters = letters.split("");
+
+  var fontSize = 14;
+  var columns = c.width / fontSize;
+
+  var drops = [];
+  for (var x = 0; x < columns; x++)
+    drops[x] = 1;
+
+  function draw() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, c.width, c.height);
+
+    ctx.fillStyle = "#0F0";
+    ctx.font = fontSize + "px 'Share Tech Mono'";
+
+    for (var i = 0; i < drops.length; i++) {
+      var text = letters[Math.floor(Math.random() * letters.length)];
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+      if (drops[i] * fontSize > c.height && Math.random() > 0.975)
+        drops[i] = 0;
+      drops[i]++;
     }
+  }
 
-    function pauseAudio() {
-      music.pause();
+  setInterval(draw, 33);
+
+  // Audio Controls
+  var music = document.getElementById("music");
+
+  function playAudio() {
+    music.play();
+  }
+
+  function pauseAudio() {
+    music.pause();
+  }
+
+  // Typewriter Effect
+  var i = 0;
+  var txt = 'Connecting to Secure Server... Access Granted... Welcome, Operative Alvarez.';
+  var speed = 50;
+
+  function typeWriter() {
+    if (i < txt.length) {
+      document.getElementById("typewriter").innerHTML += txt.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
     }
-
-    music.addEventListener('timeupdate', () => {
-      const progress = (music.currentTime / music.duration) * 100;
-      progressBar.style.width = progress + '%';
-    });
-  </script>
+  }
+  window.onload = typeWriter;
+</script>
 
 </body>
 </html>
