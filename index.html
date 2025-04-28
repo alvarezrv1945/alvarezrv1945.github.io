@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Alvarez Profile</title>
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <title>Hacked by Alvarez</title>
   <style>
     * {
       margin: 0;
@@ -13,24 +12,32 @@
     }
     body, html {
       height: 100%;
-      background: black;
-      font-family: 'Share Tech Mono', monospace;
-      color: #00ff00;
+      overflow: hidden;
+      font-family: 'Courier New', monospace;
+      color: white;
       text-align: center;
-      position: relative;
+      background: black;
+    }
+    video#background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -1;
     }
     .content {
       position: relative;
+      top: 35%;
+      transform: translateY(-35%);
       z-index: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+      padding: 20px;
     }
-    video {
-      width: 320px;
+    .profile-img {
+      width: 180px;
       height: 180px;
+      border-radius: 50%;
       border: 3px solid #00ff00;
       box-shadow: 0 0 15px #00ff00;
       margin-bottom: 20px;
@@ -42,90 +49,32 @@
       50% { box-shadow: 0 0 30px #00ff00; }
       100% { box-shadow: 0 0 15px #00ff00; }
     }
-    h1 {
-      font-size: 28px;
-      margin-bottom: 20px;
-      text-shadow: 0 0 8px #00ff00;
+    .content h1 {
+      font-size: 32px;
+      margin-bottom: 15px;
+      text-shadow: 0 0 10px #00ff00;
     }
-    .typewriter {
-      font-size: 16px;
+    .content p {
+      font-size: 20px;
+      margin: 8px 0;
+      text-shadow: 0 0 5px #00ff00;
+    }
+    .email {
       margin-top: 20px;
-      height: 60px;
-    }
-    .buttons {
-      margin-top: 20px;
-    }
-    button {
-      background: transparent;
-      border: 2px solid #00ff00;
-      color: #00ff00;
-      padding: 10px 20px;
-      margin: 5px;
-      border-radius: 5px;
       font-size: 16px;
-      cursor: pointer;
-      transition: 0.3s;
     }
-    button:hover {
-      background: #00ff00;
-      color: black;
-    }
-    audio {
-      display: none;
-    }
-    a {
+    .email a {
       color: #00ff00;
-      text-decoration: underline;
-      margin-top: 15px;
-      display: inline-block;
+      text-decoration: none;
+      text-shadow: 0 0 5px #00ff00;
     }
   </style>
 </head>
 <body>
 
-<div class="content">
-  <video src="video.mp4" autoplay muted loop></video>
+<video id="background-video" autoplay muted loop>
+  <source src="video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
-  <h1>Agent Alvarez Online</h1>
-
-  <div class="buttons">
-    <button onclick="playAudio()">[ Play Music ]</button>
-    <button onclick="pauseAudio()">[ Pause Music ]</button>
-  </div>
-
-  <audio id="music" src="https://alvarezrv1945.github.io/musik.mp3"></audio>
-
-  <div class="typewriter" id="typewriter"></div>
-
-  <a href="https://t.me/Alvarezrv" target="_blank">Contact: @Alvarezrv</a>
-</div>
-
-<script>
-  // Audio Controls
-  var music = document.getElementById("music");
-
-  function playAudio() {
-    music.play();
-  }
-
-  function pauseAudio() {
-    music.pause();
-  }
-
-  // Typewriter Effect
-  var i = 0;
-  var txt = 'Connecting to Secure Server... Access Granted... Welcome, Operative Alvarez.';
-  var speed = 50;
-
-  function typeWriter() {
-    if (i < txt.length) {
-      document.getElementById("typewriter").innerHTML += txt.charAt(i);
-      i++;
-      setTimeout(typeWriter, speed);
-    }
-  }
-  window.onload = typeWriter;
-</script>
-
-</body>
-</html>
+<div class="
