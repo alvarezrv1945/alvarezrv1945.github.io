@@ -9,3 +9,9 @@
 <h3 align="center">
   <i>"Jika kamu tidak tahan terhadap penatnya belajar, maka kamu akan menanggung bahayanya kebodohan." - Imam Syafi'i</i>
 </h3>
+
+<br>
+
+<p align="center">
+  <img src="https://media.giphy.com/media/3og0IPxMM0erATueVW/giphy.gif" width="250">
+</p>
