@@ -2,55 +2,95 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profile Musik</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Music Profile</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #c3ecb2, #7ee8fa);
+      background: linear-gradient(135deg, #89f7fe, #66a6ff);
+      height: 100vh;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      margin: 0;
+      flex-direction: column;
       text-align: center;
+      animation: fadeIn 1.2s ease;
     }
-    img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .profile-img {
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
-      border: 5px solid #555;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease;
+      border: 6px solid white;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      object-fit: cover;
+      transition: transform 0.4s ease;
     }
-    img:hover {
-      transform: scale(1.05);
+    .profile-img:hover {
+      transform: scale(1.08);
     }
     h1 {
       margin-top: 20px;
-      font-size: 28px;
-      color: #222;
+      font-size: 30px;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
     }
     .buttons {
-      margin-top: 25px;
+      margin-top: 20px;
     }
-    button {
+    .btn {
+      background: #fff;
+      color: #66a6ff;
+      border: none;
       padding: 12px 25px;
       margin: 8px;
-      font-size: 16px;
-      background-color: #4CAF50;
-      border: none;
       border-radius: 30px;
-      color: white;
+      font-size: 16px;
+      font-weight: bold;
       cursor: pointer;
-      transition: background-color 0.3s, transform 0.2s;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
-    button:hover {
-      background-color: #45a049;
-      transform: scale(1.05);
+    .btn:hover {
+      background: #66a6ff;
+      color: #fff;
+      transform: translateY(-3px);
+    }
+    #progressContainer {
+      width: 80%;
+      background: rgba(255,255,255,0.5);
+      height: 8px;
+      border-radius: 10px;
+      margin-top: 25px;
+      overflow: hidden;
+    }
+    #progressBar {
+      height: 8px;
+      background: #4CAF50;
+      width: 0%;
+      transition: width 0.3s;
+    }
+    .social-link {
+      margin-top: 30px;
+      font-size: 18px;
+    }
+    .social-link a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    .social-link a:hover {
+      color: #000;
     }
     audio {
       display: none;
@@ -59,18 +99,27 @@
 </head>
 <body>
 
-  <img src="profile.jpg" alt="Profile Picture">
+  <img class="profile-img" src="profile.jpg" alt="Profile Picture">
   <h1>Hai, Jangan Lupa Mandi Bro!</h1>
 
   <div class="buttons">
-    <button onclick="playAudio()">Play Music</button>
-    <button onclick="pauseAudio()">Pause Music</button>
+    <button class="btn" onclick="playAudio()">Play</button>
+    <button class="btn" onclick="pauseAudio()">Pause</button>
+  </div>
+
+  <div id="progressContainer">
+    <div id="progressBar"></div>
+  </div>
+
+  <div class="social-link">
+    <p>Contact me on <a href="https://t.me/Alvarezrv" target="_blank">@Alvarezrv</a></p>
   </div>
 
   <audio id="music" src="https://alvarezrv1945.github.io/musik.mp3"></audio>
 
   <script>
-    var music = document.getElementById("music");
+    const music = document.getElementById('music');
+    const progressBar = document.getElementById('progressBar');
 
     function playAudio() {
       music.play();
@@ -79,6 +128,11 @@
     function pauseAudio() {
       music.pause();
     }
+
+    music.addEventListener('timeupdate', () => {
+      const progress = (music.currentTime / music.duration) * 100;
+      progressBar.style.width = progress + '%';
+    });
   </script>
 
 </body>
