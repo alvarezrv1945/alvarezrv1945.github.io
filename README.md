@@ -1,68 +1,46 @@
-<h1 align="center">🚀 GABUT ZONE by @Alvarezrv 🚀</h1>
+<h1 align="center">🚀 GABUT ARMY | @Alvarezrv 🚀</h1>
 
 <p align="center">
-  <img src="https://media.giphy.com/media/h408T6Y5GfmXBKW62l/giphy.gif" width="200" style="border-radius: 50%;">
+  <img src="profile.jpg" width="220" style="border-radius: 50%; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
 </p>
 
 <p align="center">
-  <b>☠️ Stay Anonymous. Stay Secure. ☠️</b><br>
-  🔥 Developer | 🎧 Music Addict | 🛡️ Cyber Explorer
-</p>
-
-<p align="center">
-  <img src="https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif" width="100">
-  <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" width="100">
-  <img src="https://media.giphy.com/media/j5hP1f0ED0t7W/giphy.gif" width="100">
+  <b>「 Stay Silent, Stay Dangerous 」</b><br>
+  💻 Developer • 🎧 Music Lover • 🛡️ Cyber Enthusiast
 </p>
 
 ---
 
-## 🧠 About Me
+## 🧩 About Me
 
-- 🛠️ Building awesome things in the dark
-- 📡 Cybersecurity Enthusiast
+- 🖥️ Focused on Cybersecurity & Web Development
+- 🎯 Always Learning, Always Hacking
 - ✈️ Telegram: [@Alvarezrv](https://t.me/Alvarezrv)
+- 🌐 Website: [alvarezrv1945.github.io](https://alvarezrv1945.github.io)
+
+---
+
+## 🎶 Music Station
+
+[▶️ Listen Now](https://alvarezrv1945.github.io/musik.mp3)
+
+> *Background music for coding and hacking sessions.*
+
+---
+
+## 🎬 Anime Hacker Vibes
 
 <p align="center">
-  <img src="https://media.giphy.com/media/xT0GqeSlGSRQut4JPO/giphy.gif" width="120">
+  <img src="https://media.giphy.com/media/QHE5gWI0QjqF2/giphy.gif" width="300">
 </p>
 
----
-
-## 🎶 Music Zone
-
-[![Play Music](https://img.icons8.com/ios-filled/50/ffffff/play--v1.png)](https://alvarezrv1945.github.io/musik.mp3)
-
-> *Click the icon above to listen while you explore the Matrix.*
+> *"A true hacker never reveals all his secrets."*
 
 ---
 
-## 🎬 Watch My Hacker Style Video
+## ⚡ Hacker's Daily Code
 
-[![Watch Video](https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
-
-> *Click the image to enter another dimension.*
-
----
-
-## 🌐 My Official Website
-
-> [**Visit My Dark Web**](https://alvarezrv1945.github.io)
-
-<p align="center">
-  <img src="https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif" width="120">
-</p>
-
----
-
-## 🛡️ Hacker's Quote of the Day
-
-> "Those who control information, control the world."
-
----
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/rahulbanerjee26/githubProfileReadmeGenerator/main/gifs/code.gif" width="150">
-</p>
-
----
+```python
+while True:
+    code()
+    hack
