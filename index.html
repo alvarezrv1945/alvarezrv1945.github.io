@@ -13,18 +13,11 @@
     }
     body, html {
       height: 100%;
-      overflow: hidden;
       background: black;
       font-family: 'Share Tech Mono', monospace;
       color: #00ff00;
       text-align: center;
       position: relative;
-    }
-    canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 0;
     }
     .content {
       position: relative;
@@ -35,15 +28,14 @@
       justify-content: center;
       height: 100vh;
     }
-    img {
-      width: 180px;
+    video {
+      width: 320px;
       height: 180px;
-      border-radius: 50%;
       border: 3px solid #00ff00;
       box-shadow: 0 0 15px #00ff00;
       margin-bottom: 20px;
-      animation: pulse 2s infinite;
       object-fit: cover;
+      animation: pulse 2s infinite;
     }
     @keyframes pulse {
       0% { box-shadow: 0 0 15px #00ff00; }
@@ -91,10 +83,9 @@
 </head>
 <body>
 
-<canvas id="matrix"></canvas>
-
 <div class="content">
-  <img src="profile.jpg" alt="Profile Picture">
+  <video src="video.mp4" autoplay muted loop></video>
+
   <h1>Agent Alvarez Online</h1>
 
   <div class="buttons">
@@ -110,42 +101,6 @@
 </div>
 
 <script>
-  // Matrix Effect
-  var c = document.getElementById("matrix");
-  var ctx = c.getContext("2d");
-
-  c.height = window.innerHeight;
-  c.width = window.innerWidth;
-
-  var letters = "01";
-  letters = letters.split("");
-
-  var fontSize = 14;
-  var columns = c.width / fontSize;
-
-  var drops = [];
-  for (var x = 0; x < columns; x++)
-    drops[x] = 1;
-
-  function draw() {
-    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-    ctx.fillRect(0, 0, c.width, c.height);
-
-    ctx.fillStyle = "#0F0";
-    ctx.font = fontSize + "px 'Share Tech Mono'";
-
-    for (var i = 0; i < drops.length; i++) {
-      var text = letters[Math.floor(Math.random() * letters.length)];
-      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-      if (drops[i] * fontSize > c.height && Math.random() > 0.975)
-        drops[i] = 0;
-      drops[i]++;
-    }
-  }
-
-  setInterval(draw, 33);
-
   // Audio Controls
   var music = document.getElementById("music");
 
