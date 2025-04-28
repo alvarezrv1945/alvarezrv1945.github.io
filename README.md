@@ -13,7 +13,7 @@
 <br>
 
 <p align="center">
-  <img src="https://media.giphy.com/media/3og0IPxMM0erATueVW/giphy.gif" width="250">
+  <img src="https://media.tenor.com/4B6bGkU8kVgAAAAC/sad-crying.gif" width="250">
 </p>
 
 <br>
