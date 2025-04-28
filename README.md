@@ -15,3 +15,9 @@
 <p align="center">
   <img src="https://media.giphy.com/media/3og0IPxMM0erATueVW/giphy.gif" width="250">
 </p>
+
+<br>
+
+<p align="center">
+  ✈️ Telegram: <a href="https://t.me/Alvarezrv" target="_blank">@Alvarezrv</a>
+</p>
