@@ -61,15 +61,6 @@
       color: red;
       text-decoration: none;
     }
-    #playButton {
-      margin-top: 20px;
-      cursor: pointer;
-      color: white;
-      font-size: 14px;
-      border: 1px solid white;
-      padding: 8px 16px;
-      display: inline-block;
-    }
 
     @keyframes glitch {
       0% { transform: translate(0); }
@@ -102,8 +93,6 @@
     <source src="musik.mp3" type="audio/mpeg">
   </audio>
 
-  <audio id="scream" src="https://www.fesliyanstudios.com/play-mp3/6962" preload="auto"></audio>
-
   <div>
     <button onclick="document.getElementById('bgMusic').play()">Play Music</button>
     <button onclick="document.getElementById('bgMusic').pause()">Pause Music</button>
@@ -112,15 +101,10 @@
   <div class="contact">
     <button>Contact Me</button>
     <p>Telegram: <a href="https://t.me/Alvarezrv">@Alvarezrv</a></p>
+    <p>GitHub: <a href="https://github.com/alvarezrv1945">github.com/alvarezrv1945</a></p>
   </div>
 
   <script>
-    // Scream sound tiap 25 detik
-    setInterval(() => {
-      document.getElementById('scream').play();
-    }, 25000);
-
-    // Typewriter effect
     const text = "Security? It's Just An Illusion | Indonesian Hacker Rulez | We are Legion.";
     const target = document.getElementById("typeText");
     let i = 0;
