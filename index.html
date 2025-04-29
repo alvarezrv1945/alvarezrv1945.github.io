@@ -2,260 +2,256 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cute Meowish - Web Developer</title>
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meowish - Web Developer</title>
+  <meta name="description" content="Portfolio profesional Meowish, seorang web developer & UI/UX designer." />
+  <link rel="icon" href="profile.jpg" type="image/jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1f2937;
+      --accent: #3b82f6;
+      --card: #f3f4f6;
+    }
+    body.dark {
+      --bg: #0d1117;
+      --text: #e5e7eb;
+      --accent: #60a5fa;
+      --card: #161b22;
+    }
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #000;
-      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: all 0.3s ease;
     }
-
-    .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 60px;
-      flex-wrap: wrap;
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+      background-color: var(--card);
     }
-
-    .info {
-      max-width: 50%;
+    header img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 4px solid var(--accent);
     }
-
-    .info h2 {
-      color: gold;
+    header h1 {
       margin: 0;
+      font-size: 2.5rem;
     }
-
-    .info h1 {
-      font-size: 48px;
-      margin: 10px 0;
+    header p {
+      color: var(--accent);
+      font-weight: 500;
     }
-
-    .contact-info {
-      margin-top: 20px;
-      line-height: 1.8;
-    }
-
-    .contact-info div {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: gold;
-    }
-
-    .contact-info div span {
-      color: white;
-    }
-
-    .image {
-      max-width: 45%;
-    }
-
-    .image img {
-      max-width: 100%;
-      border-radius: 10px;
-    }
-
     nav {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #111;
-      border-radius: 30px;
-      padding: 10px 20px;
       display: flex;
+      justify-content: center;
       gap: 20px;
-      z-index: 1000;
+      background-color: var(--card);
+      padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
-
     nav a {
-      color: white;
+      color: var(--text);
       text-decoration: none;
-      padding: 10px 15px;
-      border-radius: 20px;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    section {
+      margin-bottom: 60px;
+    }
+    h2 {
+      font-size: 1.8rem;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .skills, .gallery, .socials {
       display: flex;
-      align-items: center;
-      gap: 5px;
+      flex-wrap: wrap;
+      gap: 10px;
     }
-
-    nav a:hover,
-    nav a.active {
-      background-color: white;
-      color: black;
-    }
-
-    .section {
-      padding: 60px;
-    }
-
-    .section h2 {
-      color: gold;
-      margin-bottom: 20px;
-      font-size: 28px;
-    }
-
-    .about p {
-      line-height: 1.6;
-      color: #ccc;
-    }
-
-    .projects .project {
-      background-color: #111;
-      padding: 20px;
+    .skill-item, .socials a {
+      background-color: var(--card);
+      padding: 10px 16px;
       border-radius: 10px;
-      margin-bottom: 20px;
+      font-size: 0.95rem;
+      text-decoration: none;
+      color: var(--text);
     }
-
-    .projects .project h3 {
-      margin-top: 0;
+    .gallery img {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 10px;
+    }
+    form input, form textarea {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      background-color: var(--card);
+      color: var(--text);
+    }
+    form button {
+      background-color: var(--accent);
       color: white;
-    }
-
-    .projects .project p {
-      color: #aaa;
-    }
-
-    .skills ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .skills ul li {
-      background-color: #111;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 5px;
-      color: #ccc;
-    }
-
-    .contact-form form {
-      display: flex;
-      flex-direction: column;
-      max-width: 400px;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      padding: 10px;
-      margin-bottom: 15px;
+      padding: 10px 20px;
       border: none;
-      border-radius: 5px;
-    }
-
-    .contact-form button {
-      padding: 10px;
-      background-color: gold;
-      color: black;
-      border: none;
-      border-radius: 5px;
+      border-radius: 6px;
       cursor: pointer;
     }
-
-    .contact-form button:hover {
-      background-color: #d4af37;
+    audio {
+      width: 100%;
+      margin-top: 10px;
     }
-
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .info, .image {
-        max-width: 100%;
-      }
-
-      .info h1 {
-        font-size: 36px;
-      }
-
-      nav {
-        flex-wrap: wrap;
-        gap: 10px;
-        padding: 10px;
-      }
-
-      nav a {
-        font-size: 14px;
-        padding: 8px 10px;
-      }
+    .testimonial {
+      background: var(--card);
+      padding: 16px;
+      border-left: 4px solid var(--accent);
+      font-style: italic;
+      border-radius: 8px;
+    }
+    .cv-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 18px;
+      background-color: var(--accent);
+      color: white;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      background-color: var(--card);
+      color: var(--text);
+    }
+    #toggleMode {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      padding: 8px 14px;
+      border-radius: 20px;
+      background-color: var(--card);
+      color: var(--text);
+      border: none;
+      cursor: pointer;
+      z-index: 100;
     }
   </style>
 </head>
 <body>
-  <div class="container" id="home" data-aos="fade-right">
-    <div class="info">
-      <h2>Web Developer</h2>
-      <h1>Cute Meowish</h1>
-      <div class="contact-info">
-        <div><span class="icon">✉️</span><span>meowish.000@gmail.com</span></div>
-        <div><span class="icon">🎓</span><span>Catworld State University</span></div>
-        <div><span class="icon">📞</span><span>0123456789</span></div>
-        <div><span class="icon">📍</span><span>My address, Catworld</span></div>
-      </div>
-    </div>
-    <div class="image" data-aos="fade-left">
-      <img src="https://source.unsplash.com/600x600/?black-cat" alt="Cat Glowing">
-    </div>
-  </div>
+  <button id="toggleMode">Toggle Mode</button>
 
-  <div class="section about" id="about" data-aos="fade-up">
-    <h2>About</h2>
-    <p>
-      Halo! Saya Cute Meowish, seorang Web Developer dari Catworld. Saya suka membuat website yang interaktif, responsif, dan estetis. 
-      Saya mahir menggunakan HTML, CSS, JavaScript, dan berbagai framework modern untuk membangun web yang profesional dan user-friendly.
-    </p>
-  </div>
-
-  <div class="section projects" id="projects" data-aos="fade-up">
-    <h2>Projects</h2>
-    <div class="project">
-      <h3>Catfolio - Portfolio Website</h3>
-      <p>Website portfolio dengan tema gelap yang menampilkan semua karya saya secara elegan dan interaktif.</p>
-    </div>
-    <div class="project">
-      <h3>MeowChat - Chat App</h3>
-      <p>Aplikasi chatting ringan berbasis web dengan antarmuka lucu bertema kucing.</p>
-    </div>
-  </div>
-
-  <div class="section skills" id="skills" data-aos="zoom-in">
-    <h2>Skills</h2>
-    <ul>
-      <li>HTML, CSS, JavaScript</li>
-      <li>React & Vue Framework</li>
-      <li>Responsive Web Design</li>
-      <li>UI/UX Design</li>
-      <li>Git & GitHub</li>
-    </ul>
-  </div>
-
-  <div class="section contact-form" id="contact" data-aos="fade-up">
-    <h2>Contact</h2>
-    <form>
-      <input type="text" placeholder="Nama Anda" required />
-      <input type="email" placeholder="Email Anda" required />
-      <textarea rows="5" placeholder="Pesan Anda" required></textarea>
-      <button type="submit">Kirim Pesan</button>
-    </form>
-  </div>
+  <header data-aos="zoom-in">
+    <img src="profile.jpg" alt="Foto Profil" />
+    <h1>Meowish</h1>
+    <p>Web Developer & UI/UX Designer</p>
+    <a href="cv.pdf" class="cv-btn" download>Download CV</a>
+  </header>
 
   <nav>
-    <a href="#home" class="active">Home</a>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
+    <a href="#tentang">Tentang</a>
+    <a href="#projek">Projek</a>
+    <a href="#keahlian">Keahlian</a>
+    <a href="#galeri">Galeri</a>
+    <a href="#kontak">Kontak</a>
+    <a href="#audio">Audio</a>
+    <a href="#testimoni">Testimoni</a>
   </nav>
 
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <main>
+    <section id="tentang" data-aos="fade-up">
+      <h2>Tentang Saya</h2>
+      <p>Saya pengembang web dari Catverse yang fokus pada UI/UX dan performa web modern. Saya suka membangun produk digital yang simpel, cepat, dan intuitif.</p>
+    </section>
+
+    <section id="projek" data-aos="fade-up">
+      <h2>Projek</h2>
+      <p><strong>Meowfolio</strong> - Portfolio dark mode dengan animasi scroll dan gaya minimalis.</p>
+    </section>
+
+    <section id="keahlian" data-aos="fade-up">
+      <h2>Keahlian</h2>
+      <div class="skills">
+        <div class="skill-item">HTML</div>
+        <div class="skill-item">CSS</div>
+        <div class="skill-item">JavaScript</div>
+        <div class="skill-item">React</div>
+        <div class="skill-item">Tailwind</div>
+        <div class="skill-item">Figma</div>
+        <div class="skill-item">Node.js</div>
+      </div>
+    </section>
+
+    <section id="galeri" data-aos="fade-up">
+      <h2>Galeri Projek</h2>
+      <div class="gallery">
+        <img src="https://via.placeholder.com/280x180?text=Project+1" alt="Project 1">
+        <img src="https://via.placeholder.com/280x180?text=Project+2" alt="Project 2">
+        <img src="https://via.placeholder.com/280x180?text=Project+3" alt="Project 3">
+      </div>
+    </section>
+
+    <section id="kontak" data-aos="fade-up">
+      <h2>Kontak</h2>
+      <form action="https://formspree.io/f/moqzlepe" method="POST">
+        <input type="text" name="name" placeholder="Nama Anda" required />
+        <input type="email" name="email" placeholder="Email Anda" required />
+        <textarea name="message" rows="5" placeholder="Pesan Anda" required></textarea>
+        <button type="submit">Kirim Pesan</button>
+      </form>
+    </section>
+
+    <section id="audio" data-aos="fade-up">
+      <h2>Audio Latar</h2>
+      <audio controls>
+        <source src="video.mp3" type="audio/mpeg" />
+        Browser Anda tidak mendukung audio.
+      </audio>
+    </section>
+
+    <section id="testimoni" data-aos="fade-up">
+      <h2>Testimoni</h2>
+      <div class="testimonial">
+        “Meowish adalah developer terbaik yang pernah saya kerja bareng. Cepat, kreatif, dan komunikatif!”
+        <br>– Client Cat Inc.
+      </div>
+    </section>
+  </main>
+
+  <footer data-aos="fade-up">
+    <p>© 2025 Meowish</p>
+    <div class="socials">
+      <a href="https://github.com" target="_blank">GitHub</a>
+      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+      <a href="https://instagram.com" target="_blank">Instagram</a>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
+    const toggle = document.getElementById("toggleMode");
+    toggle.onclick = () => {
+      document.body.classList.toggle("dark");
+    };
   </script>
 </body>
 </html>
