@@ -1,257 +1,139 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meowish - Web Developer</title>
-  <meta name="description" content="Portfolio profesional Meowish, seorang web developer & UI/UX designer." />
-  <link rel="icon" href="profile.jpg" type="image/jpg">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Hacked By Alvarez</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #ffffff;
-      --text: #1f2937;
-      --accent: #3b82f6;
-      --card: #f3f4f6;
-    }
-    body.dark {
-      --bg: #0d1117;
-      --text: #e5e7eb;
-      --accent: #60a5fa;
-      --card: #161b22;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
     body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      transition: all 0.3s ease;
-    }
-    header {
+      background: black;
+      color: red;
+      font-family: 'Share Tech Mono', monospace;
+      overflow: hidden;
       text-align: center;
-      padding: 60px 20px 30px;
-      background-color: var(--card);
     }
-    header img {
-      width: 140px;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 20px;
-      border: 4px solid var(--accent);
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-    header p {
-      color: var(--accent);
-      font-weight: 500;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      background-color: var(--card);
-      padding: 12px 0;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    nav a {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    nav a:hover {
-      color: var(--accent);
-    }
-    main {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
-    section {
-      margin-bottom: 60px;
-    }
-    h2 {
-      font-size: 1.8rem;
-      color: var(--accent);
-      margin-bottom: 10px;
-    }
-    .skills, .gallery, .socials {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .skill-item, .socials a {
-      background-color: var(--card);
-      padding: 10px 16px;
-      border-radius: 10px;
-      font-size: 0.95rem;
-      text-decoration: none;
-      color: var(--text);
-    }
-    .gallery img {
-      width: 100%;
-      max-width: 280px;
-      border-radius: 10px;
-    }
-    form input, form textarea {
-      width: 100%;
-      margin-bottom: 10px;
-      padding: 10px;
-      border: none;
-      border-radius: 6px;
-      background-color: var(--card);
-      color: var(--text);
-    }
-    form button {
-      background-color: var(--accent);
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    audio {
-      width: 100%;
-      margin-top: 10px;
-    }
-    .testimonial {
-      background: var(--card);
-      padding: 16px;
-      border-left: 4px solid var(--accent);
-      font-style: italic;
-      border-radius: 8px;
-    }
-    .cv-btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 18px;
-      background-color: var(--accent);
-      color: white;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    footer {
-      text-align: center;
-      padding: 30px;
-      background-color: var(--card);
-      color: var(--text);
-    }
-    #toggleMode {
+    video {
       position: fixed;
-      top: 15px;
-      right: 15px;
-      padding: 8px 14px;
-      border-radius: 20px;
-      background-color: var(--card);
-      color: var(--text);
-      border: none;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.2);
+    }
+    h1 {
+      margin-top: 80px;
+      font-size: 50px;
+      text-shadow: 0 0 20px red;
+      animation: glitch 1s infinite;
+    }
+    .typewriter {
+      font-size: 18px;
+      margin-top: 20px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid red;
+      width: 0;
+      animation: typing 5s steps(40, end) forwards, blink 0.7s step-end infinite;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      background: transparent;
+      color: white;
+      border: 1px solid red;
       cursor: pointer;
-      z-index: 100;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: red;
+    }
+    .contact {
+      margin-top: 40px;
+      font-size: 13px;
+    }
+    a {
+      color: red;
+      text-decoration: none;
+    }
+    #playButton {
+      margin-top: 20px;
+      cursor: pointer;
+      color: white;
+      font-size: 14px;
+      border: 1px solid white;
+      padding: 8px 16px;
+      display: inline-block;
+    }
+
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(2px, -2px); }
+      60% { transform: translate(-1px, 1px); }
+      80% { transform: translate(2px, 2px); }
+      100% { transform: translate(0); }
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink {
+      50% { border-color: transparent }
     }
   </style>
 </head>
 <body>
-  <button id="toggleMode">Toggle Mode</button>
 
-  <header data-aos="zoom-in">
-    <img src="profile.jpg" alt="Foto Profil" />
-    <h1>Meowish</h1>
-    <p>Web Developer & UI/UX Designer</p>
-    <a href="cv.pdf" class="cv-btn" download>Download CV</a>
-  </header>
+  <video autoplay muted loop>
+    <source src="video.mp4" type="video/mp4">
+  </video>
 
-  <nav>
-    <a href="#tentang">Tentang</a>
-    <a href="#projek">Projek</a>
-    <a href="#keahlian">Keahlian</a>
-    <a href="#galeri">Galeri</a>
-    <a href="#kontak">Kontak</a>
-    <a href="#audio">Audio</a>
-    <a href="#testimoni">Testimoni</a>
-  </nav>
+  <h1>Hacked By Alvarez</h1>
 
-  <main>
-    <section id="tentang" data-aos="fade-up">
-      <h2>Tentang Saya</h2>
-      <p>Saya pengembang web dari Catverse yang fokus pada UI/UX dan performa web modern. Saya suka membangun produk digital yang simpel, cepat, dan intuitif.</p>
-    </section>
+  <div class="typewriter" id="typeText"></div>
 
-    <section id="projek" data-aos="fade-up">
-      <h2>Projek</h2>
-      <p><strong>Meowfolio</strong> - Portfolio dark mode dengan animasi scroll dan gaya minimalis.</p>
-    </section>
+  <audio id="bgMusic" autoplay loop>
+    <source src="musik.mp3" type="audio/mpeg">
+  </audio>
 
-    <section id="keahlian" data-aos="fade-up">
-      <h2>Keahlian</h2>
-      <div class="skills">
-        <div class="skill-item">HTML</div>
-        <div class="skill-item">CSS</div>
-        <div class="skill-item">JavaScript</div>
-        <div class="skill-item">React</div>
-        <div class="skill-item">Tailwind</div>
-        <div class="skill-item">Figma</div>
-        <div class="skill-item">Node.js</div>
-      </div>
-    </section>
+  <audio id="scream" src="https://www.fesliyanstudios.com/play-mp3/6962" preload="auto"></audio>
 
-    <section id="galeri" data-aos="fade-up">
-      <h2>Galeri Projek</h2>
-      <div class="gallery">
-        <img src="https://via.placeholder.com/280x180?text=Project+1" alt="Project 1">
-        <img src="https://via.placeholder.com/280x180?text=Project+2" alt="Project 2">
-        <img src="https://via.placeholder.com/280x180?text=Project+3" alt="Project 3">
-      </div>
-    </section>
+  <div>
+    <button onclick="document.getElementById('bgMusic').play()">Play Music</button>
+    <button onclick="document.getElementById('bgMusic').pause()">Pause Music</button>
+  </div>
 
-    <section id="kontak" data-aos="fade-up">
-      <h2>Kontak</h2>
-      <form action="https://formspree.io/f/moqzlepe" method="POST">
-        <input type="text" name="name" placeholder="Nama Anda" required />
-        <input type="email" name="email" placeholder="Email Anda" required />
-        <textarea name="message" rows="5" placeholder="Pesan Anda" required></textarea>
-        <button type="submit">Kirim Pesan</button>
-      </form>
-    </section>
+  <div class="contact">
+    <button>Contact Me</button>
+    <p>Telegram: <a href="https://t.me/Alvarezrv">@Alvarezrv</a></p>
+  </div>
 
-    <section id="audio" data-aos="fade-up">
-      <h2>Audio Latar</h2>
-      <audio controls>
-        <source src="video.mp3" type="audio/mpeg" />
-        Browser Anda tidak mendukung audio.
-      </audio>
-    </section>
-
-    <section id="testimoni" data-aos="fade-up">
-      <h2>Testimoni</h2>
-      <div class="testimonial">
-        “Meowish adalah developer terbaik yang pernah saya kerja bareng. Cepat, kreatif, dan komunikatif!”
-        <br>– Client Cat Inc.
-      </div>
-    </section>
-  </main>
-
-  <footer data-aos="fade-up">
-    <p>© 2025 Meowish</p>
-    <div class="socials">
-      <a href="https://github.com" target="_blank">GitHub</a>
-      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-      <a href="https://instagram.com" target="_blank">Instagram</a>
-    </div>
-  </footer>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init();
-    const toggle = document.getElementById("toggleMode");
-    toggle.onclick = () => {
-      document.body.classList.toggle("dark");
-    };
+    // Scream sound tiap 25 detik
+    setInterval(() => {
+      document.getElementById('scream').play();
+    }, 25000);
+
+    // Typewriter effect
+    const text = "Security? It's Just An Illusion | Indonesian Hacker Rulez | We are Legion.";
+    const target = document.getElementById("typeText");
+    let i = 0;
+
+    function typeWriter() {
+      if (i < text.length) {
+        target.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 70);
+      }
+    }
+    typeWriter();
   </script>
+
 </body>
 </html>
