@@ -119,27 +119,7 @@
         </p>
     </div>
 
-    <script>
-        // Random scream sound tiap 25 detik
-        setInterval(function() {
-            document.getElementById('scream').play();
-        }, 25000);
-    </script>
-
-    <!-- Musik -->
-    <audio id="bgm">
-        <source src="musik.mp3" type="audio/mpeg">
-    </audio>
-
-    <!-- Tombol Play -->
-    <div id="playButton" onclick="playMusic()">PLAY MUSIC</div>
-
-    <script>
-        function playMusic() {
-            var audio = document.getElementById("bgm");
-            audio.play();
-            document.getElementById("playButton").style.display = 'none';
-        }
+    
     </script>
 
 </body>
